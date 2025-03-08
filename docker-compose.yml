@@ -1,0 +1,22 @@
+# docker build -f Dockerfile . -t tuxthepenguin84/homeassistant:latest --no-cache
+services:
+  homeassistant:
+    image: tuxthepenguin84/homeassistant:latest
+    container_name: homeassistant
+    restart: unless-stopped
+    networks:
+      - proxy
+    #ports:
+    #  - 5000:5000/tcp
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - LOGGING=info
+      - MODEL=
+      - PROVIDER=gemini
+
+networks:
+  proxy:
+    driver: overlay
+    external: true

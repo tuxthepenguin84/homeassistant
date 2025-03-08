@@ -1,0 +1,78 @@
+{
+  "services": {
+    "cameras": {
+      "devices": [
+        "camera-nursery"
+      ],
+      "actions": [
+        "closet",
+        "crib",
+        "floor",
+        "privacy",
+        "room",
+        "window"
+      ]
+    },
+    "garage": {
+      "devices": [
+        "garage-door"
+      ],
+      "actions": [
+        "close",
+        "health",
+        "open",
+        "status"
+      ]
+    },
+    "lights": {
+      "devices": [
+        "all",
+        "backrooms",
+        "bedroom",
+        "den",
+        "bedroom",
+        "nursery",
+        "office",
+        "kitchen"
+      ],
+      "actions": [
+        "on",
+        "off",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "aqua",
+        "blue",
+        "purple",
+        "warm",
+        "sunlight",
+        "cool",
+        "dim",
+        "mid",
+        "bright"
+      ]
+    },
+    "sprinklers": {
+      "devices": [
+        "front-bed",
+        "front-lawn",
+        "side-fence",
+        "back-fence",
+        "back-garden",
+        "all",
+        "any",
+        "none"
+      ],
+      "actions": [
+        "deleteraindelay",
+        "getraindelay",
+        "health",
+        "putraindelay",
+        "start",
+        "status",
+        "stoprunning"
+      ]
+    }
+  }
+}

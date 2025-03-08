@@ -1,0 +1,19 @@
+{
+  "providers": {
+    "ollama": {
+      "base_url": "url_to_ollama",
+      "model_name": "llama3.1:8b",
+      "type": "local"
+    },
+    "openai": {
+      "api_key": "openai_api_key",
+      "model_name": "gpt-4o-mini",
+      "type": "cloud"
+    },
+    "gemini": {
+      "api_key": "gemini_api_key",
+      "model_name": "gemini-2.0-flash",
+      "type": "cloud"
+    }
+  }
+}
