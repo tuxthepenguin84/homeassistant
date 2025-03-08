@@ -1,6 +1,7 @@
 import json
 import os
 from pathlib import Path
+from pydantic_ai.models.anthropic import AnthropicModel
 from pydantic_ai.models.gemini import GeminiModel
 from pydantic_ai.models.openai import OpenAIModel
 from pydantic_ai.providers.google_gla import GoogleGLAProvider
@@ -55,17 +56,15 @@ def ollama(model = None):
   )
 
 
-def openai(model = None):
+def anthropic(model = None):
   providers_json = import_params()['providers']
   if model:
     model_name = model
   else:
-    model_name = providers_json['openai']['model_name']
-  return OpenAIModel(
+    model_name = providers_json['anthropic']['model_name']
+  return AnthropicModel(
     model_name = model_name,
-    provider = OpenAIProvider(
-      api_key = providers_json['openai']['api_key']
-    )
+    api_key = providers_json['anthropic']['api_key']
   )
 
 
@@ -79,5 +78,19 @@ def gemini(model = None):
     model_name = model_name,
     provider = GoogleGLAProvider(
       api_key = providers_json['gemini']['api_key']
+    )
+  )
+
+
+def openai(model = None):
+  providers_json = import_params()['providers']
+  if model:
+    model_name = model
+  else:
+    model_name = providers_json['openai']['model_name']
+  return OpenAIModel(
+    model_name = model_name,
+    provider = OpenAIProvider(
+      api_key = providers_json['openai']['api_key']
     )
   )
